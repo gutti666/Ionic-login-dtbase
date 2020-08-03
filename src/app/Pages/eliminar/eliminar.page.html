@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar class="tool">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="titu">Buscar usuario</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="floating">Docuento Estudinante </ion-label>
+        <ion-input type="number" name="Documento" [(ngModel)]="Documento"></ion-input>
+    </ion-item>
+    <ion-button color="medium" (click)="Buscar()"> Buscar </ion-button>
+    <ion-card *ngIf="Exito">
+        <ion-card-content>
+            <ion-item>
+                <ion-label position="floating">Nombre </ion-label>
+                <ion-input required type="text" name="Nombre" [(ngModel)]="Nombre" placeholder=" {{No}}"> </ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating">Tipo de usuario </ion-label>
+                <ion-select placeholder="Selecione uno" [(ngModel)]="Tipo" name="Tipo" placeholder="Selecione uno ">
+                    <ion-select-option value="2">Estudiante</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating "> Imagen </ion-label>
+                <br>
+                <ion-img [src]="ulrimg |async"></ion-img>
+                <br>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Foto Perfil </ion-label>
+                <br>
+                <input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" (change)="up($event)">
+            </ion-item>
+        </ion-card-content>
+
+        <ion-button color="medium" (click)="borrar()"> Borrar</ion-button>
+
+        <ion-button color="medium" (click)="Modificar()" *ngIf="foot && Nombre && Tipo==2">Modificar</ion-button>
+
+    </ion-card>
+</ion-content>

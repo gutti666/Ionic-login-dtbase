@@ -1,0 +1,32 @@
+<ion-split-pane contentId="Nombre2">
+    <ion-menu>
+        <ion-header>
+            <ion-toolbar color="primary" class="titu">
+                <ion-buttons slot="start">
+                    <ion-menu-button></ion-menu-button>
+                </ion-buttons>
+                <ion-title class="men">
+                    Menu
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-menu-toggle Menu="Nombre2" auto.hide="false" *ngFor="let p of Pages">
+                    <ion-item [routerLink]="p.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(p.url)">
+                        <ion-label>
+                            {{p.title}}
+                        </ion-label>
+                    </ion-item>
+
+                </ion-menu-toggle>
+                <ion-item>
+
+                    <ion-button  color="medium" (click)="onlog()">Salir</ion-button>
+                </ion-item>
+            </ion-list>
+
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="Nombre2" main></ion-router-outlet>
+</ion-split-pane>

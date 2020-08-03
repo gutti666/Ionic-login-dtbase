@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar class="tool">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="titu">Login</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-img src="assets/log1.png"></ion-img>
+    <form>
+        <ion-item>
+            <ion-label position="floating">Correo Electronico </ion-label>
+            <ion-input required type="text" name="email" [(ngModel)]="Email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input required type="password" name="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-button class="tool"  (click)="Onsubmitlogin()" *ngIf="Email && password ">Ingresar </ion-button>
+    </form>
+
+
+
+</ion-content>
